@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-4.6.dtd">
+<!-- eric4 project file for project bootstrap -->
+<!-- Saved: 2013-04-15, 11:53:42 -->
+<!-- Copyright (C) 2013 Eduardo S. Pereira, pereira.somoza@gmail.com -->
+<Project version="4.6">
+  <Language>en</Language>
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <ProjectType>Qt4</ProjectType>
+  <Description>No parametric bootstrap analisys</Description>
+  <Version>0.1</Version>
+  <Author>Eduardo S. Pereira</Author>
+  <Email>pereira.somoza@gmail.com</Email>
+  <Sources>
+    <Source>pybootstrap/pybootstrap.py</Source>
+    <Source>pybootstrap/__init__.py</Source>
+    <Source>pybootstrap/fishermatrix.py</Source>
+    <Source>pybootstrap/examples/example.py</Source>
+    <Source>setup.py</Source>
+  </Sources>
+  <Forms>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Resources>
+  </Resources>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+    <Other>Doxyfile</Other>
+    <Other>README</Other>
+    <Other>license.txt</Other>
+  </Others>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES" />
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES" />
+  </FiletypeAssociations>
+</Project>
