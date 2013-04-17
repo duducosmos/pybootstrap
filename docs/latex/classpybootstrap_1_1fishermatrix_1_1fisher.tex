@@ -1,0 +1,113 @@
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher}{\section{pybootstrap.\-fishermatrix.\-fisher Class Reference}
+\label{classpybootstrap_1_1fishermatrix_1_1fisher}\index{pybootstrap.\-fishermatrix.\-fisher@{pybootstrap.\-fishermatrix.\-fisher}}
+}
+
+
+Atributs\-: p\-: list of best fit parameters of chi square dp\-: list with delta of parameters to be used in the derivation of the log of likelihoold functio.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_a52bd5794ed9d00b592ad53d4423ed669}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\item 
+def \hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_aa704febfe7dd8bc90e58ca89d36bd655}{\-\_\-\-\_\-call\-\_\-\-\_\-}
+\item 
+def \hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_a802373485dfa7931ccdb6c8110fe4090}{chi2}
+\begin{DoxyCompactList}\small\item\em Chi square as likelehoold function estimator Parameter\-: p, list of best fit parameters. \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_ab381a6f83d046ae85826811f0f96ff14}{d2logfdpi2}
+\begin{DoxyCompactList}\small\item\em Return de second numerical derivative of the log of the chi square likelihold estimatior in the best fit point of parameters Parameters\-: p\-: list of parameters, been that the parameter where will be derived must be added Delta p dp \-: 2d list of Delta parameter and position of dp in p. \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_acffdf4e368fabe7da1495612bc6224d9}{fisher\-Matrix}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_ae6192d5485cad03c3c4ba265ad00eee7}{likefunc}
+\item 
+\hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_a6b3597ba746723f9eb9ddaf857161ea1}{p}
+\item 
+\hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_a51c9e87984c9fd8c12e247e714f017e0}{dp}
+\item 
+\hyperlink{classpybootstrap_1_1fishermatrix_1_1fisher_a7d7695f180eebea3db76cdbad3ee32b5}{xy}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Atributs\-: p\-: list of best fit parameters of chi square dp\-: list with delta of parameters to be used in the derivation of the log of likelihoold functio. 
+
+likefunc \-: Likelikood function xy \-: 2d array with x and y data 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_a52bd5794ed9d00b592ad53d4423ed669}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-fishermatrix.\-fisher.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{p = {\ttfamily None}, }
+\item[{}]{dp = {\ttfamily None}, }
+\item[{}]{likefunc = {\ttfamily None}, }
+\item[{}]{xy = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_a52bd5794ed9d00b592ad53d4423ed669}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_aa704febfe7dd8bc90e58ca89d36bd655}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!\-\_\-\-\_\-call\-\_\-\-\_\-@{\-\_\-\-\_\-call\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-call\-\_\-\-\_\-@{\-\_\-\-\_\-call\-\_\-\-\_\-}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{\-\_\-\-\_\-call\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-fishermatrix.\-fisher.\-\_\-\-\_\-call\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_aa704febfe7dd8bc90e58ca89d36bd655}
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_a802373485dfa7931ccdb6c8110fe4090}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!chi2@{chi2}}
+\index{chi2@{chi2}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{chi2}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-fishermatrix.\-fisher.\-chi2 (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{p}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_a802373485dfa7931ccdb6c8110fe4090}
+
+
+Chi square as likelehoold function estimator Parameter\-: p, list of best fit parameters. 
+
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_ab381a6f83d046ae85826811f0f96ff14}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!d2logfdpi2@{d2logfdpi2}}
+\index{d2logfdpi2@{d2logfdpi2}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{d2logfdpi2}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-fishermatrix.\-fisher.\-d2logfdpi2 (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{p, }
+\item[{}]{dp}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_ab381a6f83d046ae85826811f0f96ff14}
+
+
+Return de second numerical derivative of the log of the chi square likelihold estimatior in the best fit point of parameters Parameters\-: p\-: list of parameters, been that the parameter where will be derived must be added Delta p dp \-: 2d list of Delta parameter and position of dp in p. 
+
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_acffdf4e368fabe7da1495612bc6224d9}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!fisher\-Matrix@{fisher\-Matrix}}
+\index{fisher\-Matrix@{fisher\-Matrix}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{fisher\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-fishermatrix.\-fisher.\-fisher\-Matrix (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_acffdf4e368fabe7da1495612bc6224d9}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_a51c9e87984c9fd8c12e247e714f017e0}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!dp@{dp}}
+\index{dp@{dp}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{dp}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-fishermatrix.\-fisher.\-dp}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_a51c9e87984c9fd8c12e247e714f017e0}
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_ae6192d5485cad03c3c4ba265ad00eee7}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!likefunc@{likefunc}}
+\index{likefunc@{likefunc}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{likefunc}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-fishermatrix.\-fisher.\-likefunc}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_ae6192d5485cad03c3c4ba265ad00eee7}
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_a6b3597ba746723f9eb9ddaf857161ea1}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!p@{p}}
+\index{p@{p}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{p}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-fishermatrix.\-fisher.\-p}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_a6b3597ba746723f9eb9ddaf857161ea1}
+\hypertarget{classpybootstrap_1_1fishermatrix_1_1fisher_a7d7695f180eebea3db76cdbad3ee32b5}{\index{pybootstrap\-::fishermatrix\-::fisher@{pybootstrap\-::fishermatrix\-::fisher}!xy@{xy}}
+\index{xy@{xy}!pybootstrap::fishermatrix::fisher@{pybootstrap\-::fishermatrix\-::fisher}}
+\subsubsection[{xy}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-fishermatrix.\-fisher.\-xy}}\label{classpybootstrap_1_1fishermatrix_1_1fisher_a7d7695f180eebea3db76cdbad3ee32b5}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+pybootstrap/\hyperlink{fishermatrix_8py}{fishermatrix.\-py}\end{DoxyCompactItemize}

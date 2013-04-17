@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-4.6.dtd">
 <!-- eric4 project file for project bootstrap -->
-<!-- Saved: 2013-04-15, 11:53:42 -->
+<!-- Saved: 2013-04-16, 15:18:13 -->
 <!-- Copyright (C) 2013 Eduardo S. Pereira, pereira.somoza@gmail.com -->
 <Project version="4.6">
   <Language>en</Language>
@@ -15,8 +15,11 @@
     <Source>pybootstrap/pybootstrap.py</Source>
     <Source>pybootstrap/__init__.py</Source>
     <Source>pybootstrap/fishermatrix.py</Source>
-    <Source>pybootstrap/examples/example.py</Source>
     <Source>setup.py</Source>
+    <Source>pybootstrap/filedict.py</Source>
+    <Source>pybootstrap/pybootstrap_qt.py</Source>
+    <Source>pybootstrap/pybootstrapUI.py</Source>
+    <Source>examples/example.py</Source>
   </Sources>
   <Forms>
   </Forms>
@@ -29,7 +32,6 @@
   <Others>
     <Other>Doxyfile</Other>
     <Other>README</Other>
-    <Other>license.txt</Other>
   </Others>
   <Vcs>
     <VcsType>None</VcsType>

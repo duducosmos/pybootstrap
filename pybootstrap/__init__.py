@@ -10,10 +10,16 @@ DISCLAIMER
     This module contain class and function of Bootstrap resample with replacement as described by
 Wherens et al. 2000
 
-    This software may be used, copied, or redistributed as long as it
-    is not sold and this copyright notice is reproduced on each copy
-    made. This routine is provided as is without any express or implied
-    warranties whatsoever.
+    PyBootstrap is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License.
+    PyBootstrap is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
     
 
 AUTHOR
@@ -31,4 +37,4 @@ REFERENCES:
 #
 #HOME = os.path.expanduser('~')
 
-__all__ = ['bootstrap','optimizer', 'plotHistoFreq', 'parallelization']
+__all__ = ['pybootstrap','fishermatrix', 'pybootstrap_qt', 'pybootstrapUI']

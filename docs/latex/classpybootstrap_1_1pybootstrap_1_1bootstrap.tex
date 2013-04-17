@@ -1,0 +1,197 @@
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap}{\section{pybootstrap.\-pybootstrap.\-bootstrap Class Reference}
+\label{classpybootstrap_1_1pybootstrap_1_1bootstrap}\index{pybootstrap.\-pybootstrap.\-bootstrap@{pybootstrap.\-pybootstrap.\-bootstrap}}
+}
+
+
+Bootstrap resample with replacement as described by Wherens et al.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a555780b5796d31b2b29b2bb57011366e}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em sample\-: a bidimensional array been the collunm 0 the x values and 1 the y values of the sample B \-: Number of Bootstrap resamples func \-: function to be minizades, Optional This function must be contruced in the follow way\-: first argument is a list of parameter, second argument is the x variable ex \-: func = lambda p,x\-: p\mbox{[}0\mbox{]}$\ast$x+p\mbox{[}1\mbox{]} The last argument must be x \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_ae5a9363131e365897dcba301f395dfc4}{resample}
+\begin{DoxyCompactList}\small\item\em Return a array of arraies with the all bootstrap sample. \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_aaf32f0d45eb14d5fbfd159f64363bb2b}{parameter}
+\begin{DoxyCompactList}\small\item\em p is a initial parameter aproximation \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_ace6c39962a2ffdae1f90141b4eda6441}{bootstrapparameters}
+\begin{DoxyCompactList}\small\item\em Given a function to be adjusted in the sample, calculate the parameters of this function from the bootstrap sample. \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_ab50eafcd1cb399ab01f87bc82313c5db}{bias}
+\begin{DoxyCompactList}\small\item\em Return a bias from parameters of a function to be adjusted from the sample. \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_aa9a328c614c381eb8dcb21af7199d210}{sdt}
+\begin{DoxyCompactList}\small\item\em Return the standard deviation from parameters of a function to be adjusted from the sample. \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_acee0fb6d693c5351774c73d8f6f08c12}{confidence}
+\begin{DoxyCompactList}\small\item\em Return a percentil bootstrap confidence levele from parameters of a function to be adjusted from the sample. \end{DoxyCompactList}\item 
+def \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a0d0d2fbef684ae6f7b6d29c6846d0847}{optimizer}
+\begin{DoxyCompactList}\small\item\em Given a parametric function in lambda format and a start parameters, return the best fit parameter from a data Arguments\-: p0 -\/ list with parameters sample\-: a bidimensional array been the collunm 0 the x values and 1 the y values of the sample func -\/ function\-: ex \-: func = lambda p,x\-: p\mbox{[}0\mbox{]}$\ast$x+p\mbox{[}1\mbox{]} The last argument must be x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_ad1f21eb85a2841ab60b55828604dd268}{sample}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_ace79fbf110c7059374909d987a05d1c4}{s\-Size}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a1653117224ac68ee6009eca5425d8003}{B}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a2cb90c46779425a34fca9810ee4d6c4b}{func}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a8506a391f086920b1431ebdd0158055b}{All\-Bootstrap}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_acfa5a08574d69da3ce05a14ca9521595}{p}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a122a639d5215a9ef594e2d5db811cfd3}{all\-Parameters}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a321937e3ce1389604c2f5f8ccc637859}{Bias}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a1ba773408de92cc8934a446a857b50c9}{Std}
+\item 
+\hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap_a7de8aee6c0d1bb9d59f98db4a48ef019}{Cinterval}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bootstrap resample with replacement as described by Wherens et al. 
+
+2000
+
+Wherens, R. et al., 2000. Chemometrics and Inteligent Laboratory System, 54, 35 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a555780b5796d31b2b29b2bb57011366e}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-bootstrap.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{sample, }
+\item[{}]{B, }
+\item[{}]{func = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a555780b5796d31b2b29b2bb57011366e}
+
+
+sample\-: a bidimensional array been the collunm 0 the x values and 1 the y values of the sample B \-: Number of Bootstrap resamples func \-: function to be minizades, Optional This function must be contruced in the follow way\-: first argument is a list of parameter, second argument is the x variable ex \-: func = lambda p,x\-: p\mbox{[}0\mbox{]}$\ast$x+p\mbox{[}1\mbox{]} The last argument must be x 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_ab50eafcd1cb399ab01f87bc82313c5db}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!bias@{bias}}
+\index{bias@{bias}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{bias}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-bootstrap.\-bias (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_ab50eafcd1cb399ab01f87bc82313c5db}
+
+
+Return a bias from parameters of a function to be adjusted from the sample. 
+
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_ace6c39962a2ffdae1f90141b4eda6441}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!bootstrapparameters@{bootstrapparameters}}
+\index{bootstrapparameters@{bootstrapparameters}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{bootstrapparameters}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-bootstrap.\-bootstrapparameters (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_ace6c39962a2ffdae1f90141b4eda6441}
+
+
+Given a function to be adjusted in the sample, calculate the parameters of this function from the bootstrap sample. 
+
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_acee0fb6d693c5351774c73d8f6f08c12}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!confidence@{confidence}}
+\index{confidence@{confidence}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{confidence}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-bootstrap.\-confidence (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{percentil}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_acee0fb6d693c5351774c73d8f6f08c12}
+
+
+Return a percentil bootstrap confidence levele from parameters of a function to be adjusted from the sample. 
+
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a0d0d2fbef684ae6f7b6d29c6846d0847}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!optimizer@{optimizer}}
+\index{optimizer@{optimizer}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{optimizer}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-bootstrap.\-optimizer (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{p0, }
+\item[{}]{sample, }
+\item[{}]{func}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a0d0d2fbef684ae6f7b6d29c6846d0847}
+
+
+Given a parametric function in lambda format and a start parameters, return the best fit parameter from a data Arguments\-: p0 -\/ list with parameters sample\-: a bidimensional array been the collunm 0 the x values and 1 the y values of the sample func -\/ function\-: ex \-: func = lambda p,x\-: p\mbox{[}0\mbox{]}$\ast$x+p\mbox{[}1\mbox{]} The last argument must be x. 
+
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_aaf32f0d45eb14d5fbfd159f64363bb2b}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!parameter@{parameter}}
+\index{parameter@{parameter}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{parameter}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-bootstrap.\-parameter (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{p}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_aaf32f0d45eb14d5fbfd159f64363bb2b}
+
+
+p is a initial parameter aproximation 
+
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_ae5a9363131e365897dcba301f395dfc4}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!resample@{resample}}
+\index{resample@{resample}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{resample}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-bootstrap.\-resample (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_ae5a9363131e365897dcba301f395dfc4}
+
+
+Return a array of arraies with the all bootstrap sample. 
+
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_aa9a328c614c381eb8dcb21af7199d210}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!sdt@{sdt}}
+\index{sdt@{sdt}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{sdt}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-bootstrap.\-sdt (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_aa9a328c614c381eb8dcb21af7199d210}
+
+
+Return the standard deviation from parameters of a function to be adjusted from the sample. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a8506a391f086920b1431ebdd0158055b}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!All\-Bootstrap@{All\-Bootstrap}}
+\index{All\-Bootstrap@{All\-Bootstrap}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{All\-Bootstrap}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-All\-Bootstrap}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a8506a391f086920b1431ebdd0158055b}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a122a639d5215a9ef594e2d5db811cfd3}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!all\-Parameters@{all\-Parameters}}
+\index{all\-Parameters@{all\-Parameters}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{all\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-all\-Parameters}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a122a639d5215a9ef594e2d5db811cfd3}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a1653117224ac68ee6009eca5425d8003}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!B@{B}}
+\index{B@{B}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{B}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-B}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a1653117224ac68ee6009eca5425d8003}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a321937e3ce1389604c2f5f8ccc637859}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!Bias@{Bias}}
+\index{Bias@{Bias}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{Bias}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-Bias}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a321937e3ce1389604c2f5f8ccc637859}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a7de8aee6c0d1bb9d59f98db4a48ef019}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!Cinterval@{Cinterval}}
+\index{Cinterval@{Cinterval}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{Cinterval}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-Cinterval}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a7de8aee6c0d1bb9d59f98db4a48ef019}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a2cb90c46779425a34fca9810ee4d6c4b}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!func@{func}}
+\index{func@{func}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{func}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-func}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a2cb90c46779425a34fca9810ee4d6c4b}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_acfa5a08574d69da3ce05a14ca9521595}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!p@{p}}
+\index{p@{p}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{p}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-p}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_acfa5a08574d69da3ce05a14ca9521595}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_ad1f21eb85a2841ab60b55828604dd268}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!sample@{sample}}
+\index{sample@{sample}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{sample}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-sample}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_ad1f21eb85a2841ab60b55828604dd268}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_ace79fbf110c7059374909d987a05d1c4}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!s\-Size@{s\-Size}}
+\index{s\-Size@{s\-Size}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{s\-Size}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-s\-Size}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_ace79fbf110c7059374909d987a05d1c4}
+\hypertarget{classpybootstrap_1_1pybootstrap_1_1bootstrap_a1ba773408de92cc8934a446a857b50c9}{\index{pybootstrap\-::pybootstrap\-::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}!Std@{Std}}
+\index{Std@{Std}!pybootstrap::pybootstrap::bootstrap@{pybootstrap\-::pybootstrap\-::bootstrap}}
+\subsubsection[{Std}]{\setlength{\rightskip}{0pt plus 5cm}pybootstrap.\-pybootstrap.\-bootstrap.\-Std}}\label{classpybootstrap_1_1pybootstrap_1_1bootstrap_a1ba773408de92cc8934a446a857b50c9}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+pybootstrap/\hyperlink{pybootstrap_8py}{pybootstrap.\-py}\end{DoxyCompactItemize}

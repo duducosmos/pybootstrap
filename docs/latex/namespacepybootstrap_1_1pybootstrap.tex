@@ -1,0 +1,188 @@
+\hypertarget{namespacepybootstrap_1_1pybootstrap}{\section{pybootstrap.\-pybootstrap Namespace Reference}
+\label{namespacepybootstrap_1_1pybootstrap}\index{pybootstrap.\-pybootstrap@{pybootstrap.\-pybootstrap}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpybootstrap_1_1pybootstrap_1_1parallelization}{parallelization}
+\item 
+class \hyperlink{classpybootstrap_1_1pybootstrap_1_1bootstrap}{bootstrap}
+\begin{DoxyCompactList}\small\item\em Bootstrap resample with replacement as described by Wherens et al. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepybootstrap_1_1pybootstrap_a2408bf80ba0025923f6e077fc32e99fc}{fncache}
+\begin{DoxyCompactList}\small\item\em Function caching decorator. \end{DoxyCompactList}\item 
+def \hyperlink{namespacepybootstrap_1_1pybootstrap_ab6c6e8f03a39ef6222322d6252f2124d}{optimizer}
+\begin{DoxyCompactList}\small\item\em Given a parametric function in lambda format and a start parameters, return the best fit parameter from a data Arguments\-: p0 -\/ list with parameters sample\-: a bidimensional array been the collunm 0 the x values and 1 the y values of the sample func -\/ function\-: ex \-: func = lambda p,x\-: p\mbox{[}0\mbox{]}$\ast$x+p\mbox{[}1\mbox{]} The last argument must be x. \end{DoxyCompactList}\item 
+def \hyperlink{namespacepybootstrap_1_1pybootstrap_ac300a1ef9c231e5e984854a67db180ca}{plot\-Histo\-Freq}
+\begin{DoxyCompactList}\small\item\em Given a sample of bootstrap parameter, plot the frequence histogram parameters\-: parameter \-: Array of parameters bin\-: bin of data percentil \-: Percentil confincende level low \-: Value of low percentil up \-: Value of up percentil xalbel\-: x label. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{namespacepybootstrap_1_1pybootstrap_ab732508d2b625a1ccc7e8f71b3eb301a}{\-\_\-\-\_\-title\-\_\-\-\_\-} = \char`\"{}bootstrap\char`\"{}
+\item 
+string \hyperlink{namespacepybootstrap_1_1pybootstrap_a886ce8078eb2440507c6a7191fc3ee29}{\-\_\-\-\_\-author\-\_\-\-\_\-} = \char`\"{}Eduardo S. Pereira\char`\"{}
+\item 
+string \hyperlink{namespacepybootstrap_1_1pybootstrap_a7cb59c39808a56409218cdc677e86c8e}{\-\_\-\-\_\-email\-\_\-\-\_\-} = \char`\"{}pereira.\-somoza@gmail.\-com\char`\"{}
+\item 
+string \hyperlink{namespacepybootstrap_1_1pybootstrap_acabe7aec3f4f71c215cb9561622a987b}{\-\_\-\-\_\-data\-\_\-\-\_\-} = \char`\"{}12/04/2013\char`\"{}
+\item 
+string \hyperlink{namespacepybootstrap_1_1pybootstrap_aef108c0d320bc871339690a0baa809b7}{\-\_\-\-\_\-versio\-\_\-\-\_\-} = \char`\"{}0.\-1\char`\"{}
+\item 
+dictionary \hyperlink{namespacepybootstrap_1_1pybootstrap_a7b4c58608bd0e1bff0bd2d6ba1cb4c6d}{\-\_\-\-\_\-cache} = \{\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespacepybootstrap_1_1pybootstrap_a2408bf80ba0025923f6e077fc32e99fc}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!fncache@{fncache}}
+\index{fncache@{fncache}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{fncache}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-fncache (
+\begin{DoxyParamCaption}
+\item[{}]{fn}
+\end{DoxyParamCaption}
+)}}\label{namespacepybootstrap_1_1pybootstrap_a2408bf80ba0025923f6e077fc32e99fc}
+
+
+Function caching decorator. 
+
+Keeps a cache of the return value of a function and serves from cache on consecutive calls to the function.
+
+Cache keys are computed from a hash of the function name and the parameters (this differentiates between instances through the 'self' param). Only works if parameters have a unique repr() (almost everything).
+
+Example\-:
+
+\begin{quotation}
+\begin{quotation}
+\begin{quotation}
+
+
+\end{quotation}
+
+
+\end{quotation}
+
+
+\end{quotation}
+... def greenham(a, b=2, c=3)\-: ... print 'C\-A\-C\-H\-E M\-I\-S\-S' ... return('I like turtles') ... \begin{quotation}
+\begin{quotation}
+\begin{quotation}
+print greenham(1) \# Cache miss
+
+\end{quotation}
+
+
+\end{quotation}
+
+
+\end{quotation}
+C\-A\-C\-H\-E M\-I\-S\-S I like turtles \begin{quotation}
+\begin{quotation}
+\begin{quotation}
+print greenham(1) \# Cache hit
+
+\end{quotation}
+
+
+\end{quotation}
+
+
+\end{quotation}
+I like turtles \begin{quotation}
+\begin{quotation}
+\begin{quotation}
+print greenham(1, 2, 3) \# Cache miss (even though default params)
+
+\end{quotation}
+
+
+\end{quotation}
+
+
+\end{quotation}
+C\-A\-C\-H\-E M\-I\-S\-S I like turtles \begin{quotation}
+\begin{quotation}
+\begin{quotation}
+print greenham(2, 2, \mbox{[}'a'\mbox{]}) \# Cache miss
+
+\end{quotation}
+
+
+\end{quotation}
+
+
+\end{quotation}
+C\-A\-C\-H\-E M\-I\-S\-S I like turtles \begin{quotation}
+\begin{quotation}
+\begin{quotation}
+print greenham(2, 2, \mbox{[}'b'\mbox{]}) \# Cache miss
+
+\end{quotation}
+
+
+\end{quotation}
+
+
+\end{quotation}
+C\-A\-C\-H\-E M\-I\-S\-S I like turtles \begin{quotation}
+\begin{quotation}
+\begin{quotation}
+print greenham(2, 2, \mbox{[}'a'\mbox{]}) \# Cache hit
+
+\end{quotation}
+
+
+\end{quotation}
+
+
+\end{quotation}
+I like turtles \hypertarget{namespacepybootstrap_1_1pybootstrap_ab6c6e8f03a39ef6222322d6252f2124d}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!optimizer@{optimizer}}
+\index{optimizer@{optimizer}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{optimizer}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-optimizer (
+\begin{DoxyParamCaption}
+\item[{}]{p0, }
+\item[{}]{sample, }
+\item[{}]{func}
+\end{DoxyParamCaption}
+)}}\label{namespacepybootstrap_1_1pybootstrap_ab6c6e8f03a39ef6222322d6252f2124d}
+
+
+Given a parametric function in lambda format and a start parameters, return the best fit parameter from a data Arguments\-: p0 -\/ list with parameters sample\-: a bidimensional array been the collunm 0 the x values and 1 the y values of the sample func -\/ function\-: ex \-: func = lambda p,x\-: p\mbox{[}0\mbox{]}$\ast$x+p\mbox{[}1\mbox{]} The last argument must be x. 
+
+\hypertarget{namespacepybootstrap_1_1pybootstrap_ac300a1ef9c231e5e984854a67db180ca}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!plot\-Histo\-Freq@{plot\-Histo\-Freq}}
+\index{plot\-Histo\-Freq@{plot\-Histo\-Freq}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{plot\-Histo\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}def pybootstrap.\-pybootstrap.\-plot\-Histo\-Freq (
+\begin{DoxyParamCaption}
+\item[{}]{parameter, }
+\item[{}]{bin = {\ttfamily 20}, }
+\item[{}]{percentil = {\ttfamily 95}, }
+\item[{}]{low = {\ttfamily False}, }
+\item[{}]{up = {\ttfamily False}, }
+\item[{}]{xalbel = {\ttfamily r'parameter'}}
+\end{DoxyParamCaption}
+)}}\label{namespacepybootstrap_1_1pybootstrap_ac300a1ef9c231e5e984854a67db180ca}
+
+
+Given a sample of bootstrap parameter, plot the frequence histogram parameters\-: parameter \-: Array of parameters bin\-: bin of data percentil \-: Percentil confincende level low \-: Value of low percentil up \-: Value of up percentil xalbel\-: x label. 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespacepybootstrap_1_1pybootstrap_a886ce8078eb2440507c6a7191fc3ee29}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!\-\_\-\-\_\-author\-\_\-\-\_\-@{\-\_\-\-\_\-author\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-author\-\_\-\-\_\-@{\-\_\-\-\_\-author\-\_\-\-\_\-}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{\-\_\-\-\_\-author\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string pybootstrap.\-pybootstrap.\-\_\-\-\_\-author\-\_\-\-\_\- = \char`\"{}Eduardo S. Pereira\char`\"{}}}\label{namespacepybootstrap_1_1pybootstrap_a886ce8078eb2440507c6a7191fc3ee29}
+\hypertarget{namespacepybootstrap_1_1pybootstrap_a7b4c58608bd0e1bff0bd2d6ba1cb4c6d}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!\-\_\-\-\_\-cache@{\-\_\-\-\_\-cache}}
+\index{\-\_\-\-\_\-cache@{\-\_\-\-\_\-cache}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{\-\_\-\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}dictionary pybootstrap.\-pybootstrap.\-\_\-\-\_\-cache = \{\}}}\label{namespacepybootstrap_1_1pybootstrap_a7b4c58608bd0e1bff0bd2d6ba1cb4c6d}
+\hypertarget{namespacepybootstrap_1_1pybootstrap_acabe7aec3f4f71c215cb9561622a987b}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!\-\_\-\-\_\-data\-\_\-\-\_\-@{\-\_\-\-\_\-data\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-data\-\_\-\-\_\-@{\-\_\-\-\_\-data\-\_\-\-\_\-}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{\-\_\-\-\_\-data\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string pybootstrap.\-pybootstrap.\-\_\-\-\_\-data\-\_\-\-\_\- = \char`\"{}12/04/2013\char`\"{}}}\label{namespacepybootstrap_1_1pybootstrap_acabe7aec3f4f71c215cb9561622a987b}
+\hypertarget{namespacepybootstrap_1_1pybootstrap_a7cb59c39808a56409218cdc677e86c8e}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!\-\_\-\-\_\-email\-\_\-\-\_\-@{\-\_\-\-\_\-email\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-email\-\_\-\-\_\-@{\-\_\-\-\_\-email\-\_\-\-\_\-}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{\-\_\-\-\_\-email\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string pybootstrap.\-pybootstrap.\-\_\-\-\_\-email\-\_\-\-\_\- = \char`\"{}pereira.\-somoza@gmail.\-com\char`\"{}}}\label{namespacepybootstrap_1_1pybootstrap_a7cb59c39808a56409218cdc677e86c8e}
+\hypertarget{namespacepybootstrap_1_1pybootstrap_ab732508d2b625a1ccc7e8f71b3eb301a}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!\-\_\-\-\_\-title\-\_\-\-\_\-@{\-\_\-\-\_\-title\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-title\-\_\-\-\_\-@{\-\_\-\-\_\-title\-\_\-\-\_\-}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{\-\_\-\-\_\-title\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string pybootstrap.\-pybootstrap.\-\_\-\-\_\-title\-\_\-\-\_\- = \char`\"{}bootstrap\char`\"{}}}\label{namespacepybootstrap_1_1pybootstrap_ab732508d2b625a1ccc7e8f71b3eb301a}
+\hypertarget{namespacepybootstrap_1_1pybootstrap_aef108c0d320bc871339690a0baa809b7}{\index{pybootstrap\-::pybootstrap@{pybootstrap\-::pybootstrap}!\-\_\-\-\_\-versio\-\_\-\-\_\-@{\-\_\-\-\_\-versio\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-versio\-\_\-\-\_\-@{\-\_\-\-\_\-versio\-\_\-\-\_\-}!pybootstrap::pybootstrap@{pybootstrap\-::pybootstrap}}
+\subsubsection[{\-\_\-\-\_\-versio\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string pybootstrap.\-pybootstrap.\-\_\-\-\_\-versio\-\_\-\-\_\- = \char`\"{}0.\-1\char`\"{}}}\label{namespacepybootstrap_1_1pybootstrap_aef108c0d320bc871339690a0baa809b7}

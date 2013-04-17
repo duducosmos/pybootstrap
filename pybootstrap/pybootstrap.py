@@ -16,6 +16,7 @@ import sys
 import matplotlib
 import matplotlib.pyplot as plt
 
+
 """
 Bootstrap resample with replacement as described by
 Wherens et al. 2000
@@ -30,7 +31,7 @@ This file is part of PyBootstrap.
     PyBootstrap is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License.
-    PyGraWC is distributed in the hope that it will be useful,
+    PyBootstrap is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
@@ -40,6 +41,53 @@ This file is part of PyBootstrap.
 """
 
 
+__cache = {} # Global cache
+ 
+
+def fncache(fn):
+   """
+   Function caching decorator. Keeps a cache of the return 
+   value of a function and serves from cache on consecutive
+   calls to the function. 
+ 
+   Cache keys are computed from a hash of the function 
+   name and the parameters (this differentiates between 
+   instances through the 'self' param). Only works if 
+   parameters have a unique repr() (almost everything).
+ 
+   Example:
+ 
+   >>> @fncache
+   ... def greenham(a, b=2, c=3):
+   ...   print 'CACHE MISS'
+   ...   return('I like turtles')
+   ... 
+   >>> print greenham(1)           # Cache miss
+   CACHE MISS
+   I like turtles
+   >>> print greenham(1)           # Cache hit
+   I like turtles
+   >>> print greenham(1, 2, 3)     # Cache miss (even though default params)
+   CACHE MISS
+   I like turtles
+   >>> print greenham(2, 2, ['a']) # Cache miss
+   CACHE MISS
+   I like turtles
+   >>> print greenham(2, 2, ['b']) # Cache miss
+   CACHE MISS
+   I like turtles
+   >>> print greenham(2, 2, ['a']) # Cache hit
+   I like turtles
+   """
+   def new(*args, **kwargs):
+      h = hash(repr(fn) + repr(args) + repr(kwargs))
+      if not h in __cache:
+         __cache[h] = fn(*args, **kwargs)
+      return(__cache[h])
+   new.__doc__ = "%s %s" % (fn.__doc__, "(cached)")
+   return(new)
+
+@fncache
 def optimizer(p0, sample, func):
     """
     Given a parametric function in lambda format and a start parameters, return the 
@@ -159,6 +207,7 @@ Wherens, R. et al., 2000. Chemometrics and Inteligent Laboratory System, 54, 35
         self.Bias = None
         self.Std = None
         self.Cinterval = None
+
     
     def __resample(self):
         '''
@@ -172,9 +221,13 @@ Wherens, R. et al., 2000. Chemometrics and Inteligent Laboratory System, 54, 35
         """
         Return a array of arraies with the all bootstrap sample
         """
-        AllBootstrap = [ self.__resample() for i in range(self.B)]
-        self.AllBootstrap = AllBootstrap
-        return AllBootstrap
+        def rsample(B):
+            return [ self.__resample() for i in range(B)]
+            
+        
+        
+        self.AllBootstrap = rsample(self.B)
+        return self.AllBootstrap
         
     def parameter(self, p):
         """
@@ -183,17 +236,18 @@ Wherens, R. et al., 2000. Chemometrics and Inteligent Laboratory System, 54, 35
         if(self.func):
             self.p = self.optimizer(p, self.sample, self.func)        
         return self.p
-            
-    def __bootstrapparameters(self):
+       
+    @fncache
+    def __bootstrapparameters(self, BInit):
         n_process=mpg.cpu_count()
-        if(self.B <= n_process):
+        if(BInit <= n_process):
             B = n_process
         else:
-            if(self.B%n_process != 0):
-                B = self.B-self.B%n_process
-                rB = self.B%n_process        
+            if(BInit%n_process != 0):
+                B = BInit-BInit%n_process
+                rB = BInit%n_process        
             else:
-                B = self.B
+                B = BInit
                 
         NS = len(self.p)
         NT = NS*B
@@ -211,31 +265,33 @@ Wherens, R. et al., 2000. Chemometrics and Inteligent Laboratory System, 54, 35
         MyParallel.myPool()
         allParameters = [allParameters[i*NS:(i+1)*NS] for i in range(B)]
         if(self.B <= n_process):
-            rB = B-self.B
+            rB = B-BInit
             self.allParameters = numpy.array(allParameters[:B-rB])
+            return self.allParameters
         else:
             if(self.B%n_process != 0):
-                B = self.B-self.B%n_process
-                rB = self.B%n_process   
+                B = BInit-BInit%n_process
+                rB = BInit%n_process   
                 lestP = len(allParameters)
                 for i in range(rB):
                      allParameters.append(self.optimizer(self.p, self.AllBootstrap[lestP][0], self.func))
                 self.allParameters = numpy.array(allParameters)
+                return self.allParameters
             else:
                 self.allParameters = numpy.array(allParameters)
+                return self.allParameters
                 
-                
-                
+    
     def bootstrapparameters(self):
         """
         Given a function to be adjusted in the sample, calculate 
         the parameters of this function from the bootstrap sample
         """
+        
         if(self.func != None):            
             if(self.AllBootstrap != None):
                 if(self.p != None):
-                    self.__bootstrapparameters()     
-                    return self.allParameters
+                    return self.__bootstrapparameters(self.B)     
                 else:
                     print 'Run parameter method with initial parameters'   
                     return None
@@ -243,7 +299,7 @@ Wherens, R. et al., 2000. Chemometrics and Inteligent Laboratory System, 54, 35
             else:
                 self.resample()
                 if(self.p != None):
-                    self.__bootstrapparameters()     
+                    self.__bootstrapparameters(self.B)     
                     return self.allParameters
                 else:
                     print 'Run parameter method with initial parameters'
@@ -310,7 +366,7 @@ Wherens, R. et al., 2000. Chemometrics and Inteligent Laboratory System, 54, 35
             ci.append([CI[qlow], CI[qup]])
         self.Cinterval = ci
         
-    
+    @fncache
     def confidence(self, percentil):
         """
         Return a percentil bootstrap confidence levele from parameters of a function to be adjusted from the sample.
@@ -325,8 +381,8 @@ Wherens, R. et al., 2000. Chemometrics and Inteligent Laboratory System, 54, 35
                 return self.Cinterval
             else:
                 return None
-
-        
+                
+    @fncache
     def optimizer(self, p0, sample, func):
         """
     Given a parametric function in lambda format and a start parameters, return the 

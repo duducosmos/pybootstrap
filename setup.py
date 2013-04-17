@@ -8,7 +8,7 @@ from setuptools import  setup, find_packages
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-datadir = os.path.join('mfiles','wtc')
+datadir = os.path.join('examples')
 datafiles = [(datadir, [f for f in glob.glob(os.path.join(datadir, '*'))])]
 
 
@@ -22,7 +22,7 @@ setup(
     keywords = "statistics, bootstrap, Fisher Matrix",
     url = "https://github.com/duducosmos/pybootstrap",
     packages= find_packages(), 
-    package_data={'': ['*.txt', '*.html', '*.png']}, 
+    package_data={'': ['*.txt','.csv','*.html', '*.png']}, 
     data_files= datafiles,
     install_requires=['numpy', 'scipy', 'matplotlib'], 
     long_description=read('README'),
@@ -31,4 +31,6 @@ setup(
         "Topic :: Utilities",
         "License :: GNU V3",
     ],
+    entry_points = {"console_scripts": ["pybootstrap_qt = pybootstrap.pybootstrap_qt:main", ]  }, 
 )
+
