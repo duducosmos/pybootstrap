@@ -24,7 +24,7 @@ RUN :
     To run the Graphical Using Interface, open the terminal and write pybootstrap_qt
     
 DOC: 
-    For more information an how to use see: http://duducosmos.github.com/pybootstrap/
+    For more information an how to use see: https://github.com/duducosmos/pybootstrap
 
 AUTHOR
     Eduardo S. Pereira
